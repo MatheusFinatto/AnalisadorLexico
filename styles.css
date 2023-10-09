@@ -1,0 +1,181 @@
+body {
+  background-color: #333;
+  color: #fafafa;
+  font-family: "Roboto", sans-serif; /* Adicione a fonte Roboto como padrão para o corpo do texto */
+}
+
+.wrapper {
+  padding: 20px;
+}
+
+.navbar {
+  color: #fafafa;
+  padding: 10px;
+  text-align: center;
+}
+
+.card-title {
+  color: #fafafa;
+}
+
+.tables-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.inputWordsContent {
+  color: #fafafa;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.automato-container {
+  color: #fafafa;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.validateWordsContainer {
+  color: #fafafa;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.tableContainer {
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+/* Adicione bordas para tornar as linhas visíveis */
+.table {
+  width: 100%;
+  color: #fafafa;
+  border-collapse: collapse; /* Para unir as bordas das células */
+  text-align: center;
+  border-left: 1px solid #fafafa;
+}
+
+/* Estilo para todas as células (td e th) */
+.table td,
+.table th {
+  border: 1px solid #fafafa;
+  padding: 8px; /* Ajuste o espaçamento interno das células conforme necessário */
+  width: 50px;
+  border-left: 1px solid #fafafa;
+}
+
+/* Estilo para o cabeçalho da tabela */
+.table th {
+  background-color: #444;
+  border-left: 1px solid #fafafa; /* Adicione uma borda à esquerda do cabeçalho */
+}
+
+/* Estilo para as células da tabela de dados */
+.table td {
+  border-left: 1px solid #fafafa;
+}
+
+/* Estilo para a borda interna das células */
+
+.input-custom {
+  background-color: #333;
+  color: #fafafa;
+  border: 1px solid #fafafa;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin-right: 10px;
+}
+
+.insert-button {
+  background-color: #333;
+  color: #fafafa;
+  border: 1px solid #fafafa;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.btn-success {
+  background-color: #4caf50;
+}
+
+.btn-dark {
+  background-color: #333;
+  color: #fafafa;
+  border: 1px solid #fafafa;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.footer {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#input_palavras,
+#buscar_palavras {
+  width: 200px;
+}
+
+/** Highlight Table **/
+
+.focus-linha td,
+.focus-coluna {
+  background: rgba(76, 175, 80, 0.1) !important;
+  background: #007bff5e !important;
+}
+
+.focus-linha td.focus-coluna {
+  color: #e7edee;
+  background: #007bff !important;
+}
+
+.focus-linha td,
+.focus-coluna {
+  background: #007bff5e !important;
+}
+
+.focus-linha td.focus-coluna-erro {
+  color: #e7edee;
+  background: rgba(231, 76, 60, 0.7) !important;
+}
+
+.semi-focus-erro {
+  background: rgba(231, 76, 60, 0.2) !important;
+}
+
+.fa-minus-circle {
+  color: red !important;
+}
+
+.fa-check-circle {
+  color: #007bff !important;
+}
+
+.fas.fa-trash:hover {
+  color: red !important;
+  cursor: pointer;
+}
+
+.table-busca tbody tr td {
+  text-align: left;
+}
+
+.btn-success:disabled {
+  background-color: #ccc; /* Cor de fundo cinza quando desabilitado */
+  color: #666; /* Cor do texto cinza quando desabilitado */
+  border-color: #999; /* Cor da borda cinza quando desabilitado */
+  cursor: not-allowed; /* Altere o cursor para "não permitido" quando desabilitado */
+}
+
+.dictionary {
+  display: flex;
+  gap: 30px;
+  > p {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+}
