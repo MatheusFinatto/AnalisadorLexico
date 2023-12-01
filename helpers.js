@@ -65,40 +65,6 @@ const getWords = () => {
   return words;
 };
 
-// Função para validar e destacar uma palavra na tabela
-const validateWord = () => {
-  let words = getWords();
-  let state = 0;
-  let error = false;
-
-  for (let i = 0; i < words.length; i++) {
-    let regularExpression = /([a-z_])/;
-
-    if (regularExpression.test(words[i]) && error == false) {
-      highlightTable(state, words[i], table[state][words[i]]);
-
-      if (table[state][words[i]] != "-") {
-        state = table[state][words[i]];
-      } else {
-        error = true;
-      }
-    } else if (words[i] == " ") {
-      validateWordEnd(words, error, state);
-    }
-  }
-};
-
-// Função para limpar a tabela de destaques
-const clearTable = () => {
-  $("#tabela_tbody tr").removeClass("focus-linha");
-  $("#tabela_tbody td").removeClass("focus-coluna");
-  $("#tabela_tbody tr").removeClass("focus-linha-erro");
-  $("#tabela_tbody td").removeClass("focus-coluna-erro");
-  $("#tabela_tbody tr").removeClass("semi-focus-erro");
-  $("#tabela_tbody td").removeClass("semi-focus-erro");
-};
-
-// Função para destacar elementos da tabela
 const highlightTable = (estado, palavra, erroEstado) => {
   clearTable();
 
@@ -110,4 +76,13 @@ const highlightTable = (estado, palavra, erroEstado) => {
 
   $("#tabela_tbody .linha_" + estado).addClass("focus-linha");
   $("#tabela_tbody .coluna_" + palavra).addClass("focus-coluna");
+};
+
+const clearTable = () => {
+  $("#tabela_tbody tr").removeClass("focus-linha");
+  $("#tabela_tbody td").removeClass("focus-coluna");
+  $("#tabela_tbody tr").removeClass("focus-linha-erro");
+  $("#tabela_tbody td").removeClass("focus-coluna-erro");
+  $("#tabela_tbody tr").removeClass("semi-focus-erro");
+  $("#tabela_tbody td").removeClass("semi-focus-erro");
 };
