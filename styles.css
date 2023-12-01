@@ -46,36 +46,35 @@ body {
   max-width: 100%;
 }
 
-/* Adicione bordas para tornar as linhas visíveis */
+
 .table {
   width: 100%;
   color: #fafafa;
-  border-collapse: collapse; /* Para unir as bordas das células */
+  border-collapse: collapse; 
   text-align: center;
   border-left: 1px solid #fafafa;
 }
 
-/* Estilo para todas as células (td e th) */
+
 .table td,
 .table th {
   border: 1px solid #fafafa;
-  padding: 8px; /* Ajuste o espaçamento interno das células conforme necessário */
+  padding: 8px; 
   width: 50px;
   border-left: 1px solid #fafafa;
 }
 
-/* Estilo para o cabeçalho da tabela */
+
 .table th {
   background-color: #444;
-  border-left: 1px solid #fafafa; /* Adicione uma borda à esquerda do cabeçalho */
+  border-left: 1px solid #fafafa; 
 }
 
-/* Estilo para as células da tabela de dados */
+
 .table td {
   border-left: 1px solid #fafafa;
 }
 
-/* Estilo para a borda interna das células */
 
 .input-custom {
   background-color: #333;
@@ -119,7 +118,6 @@ body {
   width: 200px;
 }
 
-/** Highlight Table **/
 
 .focus-linha td,
 .focus-coluna {
@@ -164,10 +162,10 @@ body {
 }
 
 .btn-success:disabled {
-  background-color: #ccc; /* Cor de fundo cinza quando desabilitado */
-  color: #666; /* Cor do texto cinza quando desabilitado */
-  border-color: #999; /* Cor da borda cinza quando desabilitado */
-  cursor: not-allowed; /* Altere o cursor para "não permitido" quando desabilitado */
+  background-color: #ccc; 
+  color: #666; 
+  border-color: #999; 
+  cursor: not-allowed; 
 }
 
 .dictionary {

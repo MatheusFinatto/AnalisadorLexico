@@ -1,16 +1,11 @@
-// Função para criar uma linha da tabela com base nos dados do item da tabela
+
 const createTableRow = (tableItem) => {
   let tableRow = $(document.createElement("tr"));
   let tableData = $(document.createElement("td"));
 
-  // Verifica se o estado é final e configura a célula da tabela adequadamente
-  if (tableItem["final"]) {
-    tableData.html("q" + tableItem["estado"] + "*");
-    tableData.addClass("tem-sel center border-custom");
-  } else {
-    tableData.html("q" + tableItem["estado"]);
-    tableData.addClass("tem-sel center border-custom");
-  }
+  tableItem["final"]
+    ? tableData.html("q" + tableItem["estado"] + "*")
+    : tableData.html("q" + tableItem["estado"]);
 
   tableRow.append(tableData);
   tableRow.addClass("linha_" + tableItem["estado"]);
@@ -18,19 +13,17 @@ const createTableRow = (tableItem) => {
   return tableRow;
 };
 
-// Função para preencher uma linha da tabela com as transições do item da tabela
 const populateTableRow = (tableRow, tableItem) => {
   let firstChar = "a";
   let lastChar = "z";
 
-  // Itera pelo alfabeto e preenche as células da tabela com as transições
   for (let i = firstChar.charCodeAt(0); i <= lastChar.charCodeAt(0); i++) {
-    let dash = String.fromCharCode(i);
+    let letra = String.fromCharCode(i);
     let td = $(document.createElement("td"));
-    td.addClass("coluna_" + dash + " center");
+    td.addClass("coluna_" + letra + " center");
 
-    if (tableItem[dash] != "-") {
-      td.html("q" + tableItem[dash]);
+    if (tableItem[letra] != "-") {
+      td.html("q" + tableItem[letra]);
       td.addClass("tem-sel");
     } else {
       td.html("-").addClass("border-custom");
@@ -42,7 +35,6 @@ const populateTableRow = (tableRow, tableItem) => {
   return tableRow;
 };
 
-// Função para montar a tabela com base nos itens da tabela
 const mountTable = (itemTab) => {
   let table = $("#tabela_tbody");
   table.html("");
@@ -54,7 +46,7 @@ const mountTable = (itemTab) => {
   });
 };
 
-// Função para obter as palavras da entrada do usuário
+
 const getWords = () => {
   let words = $("#buscar_palavras").val().toLowerCase();
   if (words.length == 0) {

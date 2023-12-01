@@ -1,4 +1,4 @@
-//TESTE INPUT
+
 
 const testWord = () => {
   const word = $("#input_palavras").val().toLowerCase();
@@ -6,7 +6,7 @@ const testWord = () => {
   $("#insere_palavras").prop("disabled", regularExpression.test(word));
 };
 
-//FUNCIONAMENTO DO BOTÃO
+
 
 const addWords = (palavra) => {
   if (words.indexOf(palavra) < 0 && palavra.length > 0) {
@@ -32,7 +32,7 @@ const mountWordState = () => {
 
 const createSingleWordState = (arrayWords, actualState) => {
   for (let j = 0; j < arrayWords.length; j++) {
-    // Verifica se não existe transição do estado atual para a letra atual da palavra
+    console.log(states[actualState][arrayWords[j]])
     if (typeof states[actualState][arrayWords[j]] === "undefined") {
       let nextState = globalState + 1;
       states[actualState][arrayWords[j]] = nextState;
@@ -40,7 +40,7 @@ const createSingleWordState = (arrayWords, actualState) => {
       globalState = actualState = nextState;
     } else actualState = states[actualState][arrayWords[j]];
 
-    // Se for a última letra da palavra, marca o estado como final
+
     if (j == arrayWords.length - 1) states[actualState]["final"] = true;
   }
   return actualState;
@@ -49,35 +49,32 @@ const createSingleWordState = (arrayWords, actualState) => {
 const generateTableLines = () => {
   let estadosArray = [];
   states.forEach((state, idx) => {
-    estadosArray.push(manageState(state, idx)); // Converte o estado em um formato mais legível
+    estadosArray.push(manageState(state, idx));
   });
 
   return estadosArray;
 };
 
-// Função para converter um estado de um autômato finito determinístico (AFD) em um objeto mais legível
 const manageState = (state, index) => {
   const stateInfo = {
     estado: index,
-    final: typeof state["final"] !== "undefined", // Verifica se o estado é final
+    final: typeof state["final"] !== "undefined", 
   };
 
   const alphabet = "abcdefghijklmnopqrstuvwxyz";
 
   for (let letter of alphabet) {
     const transition = state[letter];
-    // Adiciona a transição ou "-" se não houver transição
     stateInfo[letter] = typeof transition !== "undefined" ? transition : "-";
   }
 
   return stateInfo;
 };
 
-//VALIDAÇÃO
+
 
 const validateWord = () => {
-  console.log("oi");
-  let words = getWords();
+  let words = getWords(); 
   let state = 0;
   let error = false;
 
